@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coding Challenge 6</title>
+  <style>
+    body {
+      background-color: lightseagreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quadratic Formula</h1>
+
+  <script>
+    function solve() {
+	
+      const a = parseFloat(prompt("Enter the value of a:"));
+      const b = parseFloat(prompt("Enter the value of b:"));
+      const c = parseFloat(prompt("Enter the value of c:"));
+
+      const discriminant = b * b - 4 * a * c;
+
+      let resultS;
+
+      if (discriminant > 0) {
+        const firstRoot = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const secondRoot = (-b - Math.sqrt(discriminant)) / (2 * a);
+        resultS = The roots are: x1 = ${root1.toFixed(2)} and x2 = ${root2.toFixed(2)};
+      } 
+	  else if (discriminant === 0) {
+        const root = -b / (2 * a);
+        resultS = `The root is (real and equal): x1 = x2 = ${root.toFixed(2)}`;
+      }
+	  else {      
+        const realPart = -b / (2 * a);
+        const imaginaryNum = Math.sqrt(-discriminant) / (2 * a);
+        resultS = `The roots are complex: x1 = ${realPart.toFixed(2)} + ${imaginaryNum.toFixed(2)}i and x2 = ${realPart.toFixed(2)} - ${imaginaryNum.toFixed(2)}i`;
+      }
+
+      alert(resultText);
+    }
+  </script>
+
+  <button onclick="solve()">Find the Roots</button>
+
+</body>
+</html>
